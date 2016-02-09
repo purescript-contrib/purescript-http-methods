@@ -91,7 +91,7 @@ instance ordCustomMethod :: Ord CustomMethod where
   compare = gCompare
 
 instance showCustomMethod :: Show CustomMethod where
-  show (CustomMethod m) = "CustomMethod " <> show m
+  show (CustomMethod m) = "(CustomMethod " <> show m <> ")"
 
 fromString :: String -> Either Method CustomMethod
 fromString s =
