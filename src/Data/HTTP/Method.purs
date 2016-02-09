@@ -1,6 +1,7 @@
 module Data.HTTP.Method
   ( Method(..)
   , CustomMethod()
+  , runCustomMethod
   , fromString
   , print
   ) where
