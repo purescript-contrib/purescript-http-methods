@@ -1,7 +1,7 @@
 module Data.HTTP.Method
   ( Method(..)
-  , CustomMethod()
-  , runCustomMethod
+  , CustomMethod
+  , unCustomMethod
   , fromString
   , print
   ) where
@@ -9,7 +9,7 @@ module Data.HTTP.Method
 import Prelude
 
 import Data.Either (Either(..), either)
-import Data.Generic (Generic, gCompare)
+import Data.Generic (class Generic)
 import Data.String as Str
 
 data Method
@@ -35,29 +35,9 @@ data Method
   -- RFC5789
   | PATCH
 
+derive instance eqMethod :: Eq Method
+derive instance ordMethod :: Ord Method
 derive instance genericMethod :: Generic Method
-
-instance eqMethod :: Eq Method where
-  eq OPTIONS OPTIONS = true
-  eq GET GET = true
-  eq HEAD HEAD = true
-  eq POST POST = true
-  eq PUT PUT = true
-  eq DELETE DELETE = true
-  eq TRACE TRACE = true
-  eq CONNECT CONNECT = true
-  eq PROPFIND PROPFIND = true
-  eq PROPPATCH PROPPATCH = true
-  eq MKCOL MKCOL = true
-  eq COPY COPY = true
-  eq MOVE MOVE = true
-  eq LOCK LOCK = true
-  eq UNLOCK UNLOCK = true
-  eq PATCH PATCH = true
-  eq _ _ = false
-
-instance ordMethod :: Ord Method where
-  compare = gCompare
 
 instance showMethod :: Show Method where
   show OPTIONS = "OPTIONS"
@@ -79,16 +59,12 @@ instance showMethod :: Show Method where
 
 newtype CustomMethod = CustomMethod String
 
-runCustomMethod :: CustomMethod -> String
-runCustomMethod (CustomMethod m) = m
+unCustomMethod :: CustomMethod -> String
+unCustomMethod (CustomMethod m) = m
 
+derive instance eqCustomMethod :: Eq CustomMethod
+derive instance ordCustomMethod :: Ord CustomMethod
 derive instance genericCustomMethod :: Generic CustomMethod
-
-instance eqCustomMethod :: Eq CustomMethod where
-  eq (CustomMethod m1) (CustomMethod m2) = m1 == m2
-
-instance ordCustomMethod :: Ord CustomMethod where
-  compare = gCompare
 
 instance showCustomMethod :: Show CustomMethod where
   show (CustomMethod m) = "(CustomMethod " <> show m <> ")"
@@ -114,4 +90,4 @@ fromString s =
     m -> Right (CustomMethod m)
 
 print :: Either Method CustomMethod -> String
-print = either show runCustomMethod
+print = either show unCustomMethod
