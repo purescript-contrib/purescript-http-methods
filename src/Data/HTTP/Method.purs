@@ -9,7 +9,6 @@ module Data.HTTP.Method
 import Prelude
 
 import Data.Either (Either(..), either)
-import Data.Generic (class Generic)
 import Data.String as Str
 
 data Method
@@ -37,7 +36,6 @@ data Method
 
 derive instance eqMethod :: Eq Method
 derive instance ordMethod :: Ord Method
-derive instance genericMethod :: Generic Method
 
 instance showMethod :: Show Method where
   show OPTIONS = "OPTIONS"
@@ -64,7 +62,6 @@ unCustomMethod (CustomMethod m) = m
 
 derive instance eqCustomMethod :: Eq CustomMethod
 derive instance ordCustomMethod :: Ord CustomMethod
-derive instance genericCustomMethod :: Generic CustomMethod
 
 instance showCustomMethod :: Show CustomMethod where
   show (CustomMethod m) = "(CustomMethod " <> show m <> ")"
