@@ -17,7 +17,8 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-either": "#compiler/0.12",
-    "purescript-strings": "#compiler/0.12"
+    "purescript-either": "^4.0.0",
+    "purescript-prelude": "^4.0.0",
+    "purescript-strings": "^4.0.0"
   }
 }
