@@ -84,6 +84,7 @@ fromString s =
     "MOVE" -> Left MOVE
     "LOCK" -> Left LOCK
     "UNLOCK" -> Left UNLOCK
+    "PATCH" -> Left PATCH
     m -> Right (CustomMethod m)
 
 print :: Either Method CustomMethod -> String
