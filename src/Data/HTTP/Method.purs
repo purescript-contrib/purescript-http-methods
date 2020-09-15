@@ -11,6 +11,9 @@ import Prelude
 import Data.Either (Either(..), either)
 import Data.String as Str
 
+-- | The definition of the type is based on HTTP/1.1 with
+-- | [RFC 2518](https://tools.ietf.org/html/rfc2518) and
+-- | [RFC 5789](https://tools.ietf.org/html/rfc5789).
 data Method
   -- HTTP/1.1
   = OPTIONS

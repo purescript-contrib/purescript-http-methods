@@ -6,7 +6,7 @@
 [![Maintainer: garyb](https://img.shields.io/badge/maintainer-garyb-teal.svg)](https://github.com/garyb)
 [![Maintainer: thomashoneyman](https://img.shields.io/badge/maintainer-thomashoneyman-teal.svg)](https://github.com/thomashoneyman)
 
-HTTP method type.
+HTTP method type. The definition of the type is based on HTTP/1.1 with [RFC 2518](https://tools.ietf.org/html/rfc2518) and [RFC 5789](https://tools.ietf.org/html/rfc5789).
 
 ## Installation
 
