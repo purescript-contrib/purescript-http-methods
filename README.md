@@ -26,7 +26,6 @@ The quick start hasn't been written yet (contributions are welcome!). The quick 
 
 1. Module documentation is [published on Pursuit](https://pursuit.purescript.org/packages/purescript-http-methods).
 2. Written documentation and [the changelog](./docs/CHANGELOG.md) are kept in [the docs directory](./docs).
-3. Usage examples can be found in [the test suite](./test).
 
 If you get stuck, there are several ways to get help:
 
