@@ -18,7 +18,45 @@ spago install http-methods
 
 ## Quick start
 
-The quick start hasn't been written yet (contributions are welcome!). The quick start covers a common, minimal use case for the library, whereas longer examples and tutorials are kept in the [docs directory](./docs.)
+```purescript
+module PrintingExample where
+
+import Data.HTTP.Method (Method(..), print)
+import Data.Either (Either(..))
+
+-- To print an HTTP method, use the `print` function:
+
+-- same as "GET"
+getMethod :: String
+getMethod = print (Left GET)
+```
+
+```purescript
+module ParsingExample where
+
+import Data.HTTP.Method (Method(..), CustomMethod(..), parse, fromString)
+import Data.Either (Either(..))
+
+-- To parse an HTTP method, use the `fromString` function:
+
+-- same as `Left GET`.
+getMethod :: Either Method CustomMethod
+getMethod = fromString "GET"
+
+-- Any methods not defined by `Method` will be parsed as a custom method:
+
+-- same as `Right (CustomMethod "FOO")`
+fooMethod :: Either Method CustomMethod
+fooMethod = fromString "FOO"
+
+-- If you want to handle the parsing in a more controlled way,
+-- use `parse` directly.
+
+-- Only accept methods defined in the Method type
+-- and ignore all other custom methods
+maybeMethod :: String -> Maybe Method
+maybeMethod = parse Just (\_ -> Nothing)
+```
 
 ## Documentation
 
