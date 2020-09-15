@@ -63,7 +63,7 @@ maybeMethod = parse Just (\_ -> Nothing)
 `http-methods` documentation is stored in a few places:
 
 1. Module documentation is [published on Pursuit](https://pursuit.purescript.org/packages/purescript-http-methods).
-2. Written documentation and [the changelog](./docs/CHANGELOG.md) are kept in [the docs directory](./docs).
+2. See [the changelog](./CHANGELOG.md).
 
 If you get stuck, there are several ways to get help:
 
