@@ -69,26 +69,32 @@ derive instance ordCustomMethod :: Ord CustomMethod
 instance showCustomMethod :: Show CustomMethod where
   show (CustomMethod m) = "(CustomMethod " <> show m <> ")"
 
-fromString :: String -> Either Method CustomMethod
-fromString s =
+-- | Parses a `String` into a `Method` and pass the result into the first
+-- | handler. If the string does not match a known method,
+-- | passes itself into the second handler.
+parse :: (Method -> c) -> (String -> c) -> String -> c
+parse handleMethod handleUnknown s =
   case Str.toUpper s of
-    "OPTIONS" -> Left OPTIONS
-    "GET" -> Left GET
-    "HEAD" -> Left HEAD
-    "POST" -> Left POST
-    "PUT" -> Left PUT
-    "DELETE" -> Left DELETE
-    "TRACE" -> Left TRACE
-    "CONNECT" -> Left CONNECT
-    "PROPFIND" -> Left PROPFIND
-    "PROPPATCH" -> Left PROPPATCH
-    "MKCOL" -> Left MKCOL
-    "COPY" -> Left COPY
-    "MOVE" -> Left MOVE
-    "LOCK" -> Left LOCK
-    "UNLOCK" -> Left UNLOCK
-    "PATCH" -> Left PATCH
-    m -> Right (CustomMethod m)
+    "OPTIONS" -> handleMethod OPTIONS
+    "GET" -> handleMethod GET
+    "HEAD" -> handleMethod HEAD
+    "POST" -> handleMethod POST
+    "PUT" -> handleMethod PUT
+    "DELETE" -> handleMethod DELETE
+    "TRACE" -> handleMethod TRACE
+    "CONNECT" -> handleMethod CONNECT
+    "PROPFIND" -> handleMethod PROPFIND
+    "PROPPATCH" -> handleMethod PROPPATCH
+    "MKCOL" -> handleMethod MKCOL
+    "COPY" -> handleMethod COPY
+    "MOVE" -> handleMethod MOVE
+    "LOCK" -> handleMethod LOCK
+    "UNLOCK" -> handleMethod UNLOCK
+    "PATCH" -> handleMethod PATCH
+    m -> handleUnknown m
+
+fromString :: String -> Either Method CustomMethod
+fromString = parse Left (Right <<< CustomMethod)
 
 print :: Either Method CustomMethod -> String
 print = either show unCustomMethod
