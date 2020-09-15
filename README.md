@@ -1,4 +1,4 @@
-# Http Methods
+# HTTP Methods
 
 [![CI](https://github.com/purescript-contrib/purescript-http-methods/workflows/CI/badge.svg?branch=main)](https://github.com/purescript-contrib/purescript-http-methods/actions?query=workflow%3ACI+branch%3Amain)
 [![Release](https://img.shields.io/github/release/purescript-contrib/purescript-http-methods.svg)](https://github.com/purescript-contrib/purescript-http-methods/releases)

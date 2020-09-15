@@ -1,4 +1,4 @@
-# Contributing to Http Methods
+# Contributing to HTTP Methods
 
 Thanks for your interest in contributing to `http-methods`! We welcome new contributions regardless of your level of experience or familiarity with PureScript.
 
