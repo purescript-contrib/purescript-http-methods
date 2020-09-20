@@ -76,6 +76,6 @@ You can contribute to `http-methods` in several ways:
 
 1. If you encounter a problem or have a question, please [open an issue](https://github.com/purescript-contrib/purescript-http-methods/issues). We'll do our best to work with you to resolve or answer it.
 
-2. If you would like to contribute code, tests, or documentation, please [read the contributor guide](./.github/CONTRIBUTING.md). It's a short, helpful introduction to contributing to this library, including development instructions.
+2. If you would like to contribute code, tests, or documentation, please [read the contributor guide](./CONTRIBUTING.md). It's a short, helpful introduction to contributing to this library, including development instructions.
 
 3. If you have written a library, tutorial, guide, or other resource based on this package, please share it on the [PureScript Discourse](https://discourse.purescript.org)! Writing libraries and learning resources are a great way to help this library succeed.
