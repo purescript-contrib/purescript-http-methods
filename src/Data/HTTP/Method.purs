@@ -72,7 +72,7 @@ instance showCustomMethod :: Show CustomMethod where
 -- | Parses a `String` into a `Method` and pass the result into the first
 -- | handler. If the string does not match a known method,
 -- | passes itself into the second handler.
-parse :: (Method -> c) -> (String -> c) -> String -> c
+parse :: forall c. (Method -> c) -> (String -> c) -> String -> c
 parse handleMethod handleUnknown s =
   case Str.toUpper s of
     "OPTIONS" -> handleMethod OPTIONS
