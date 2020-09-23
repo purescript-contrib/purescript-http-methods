@@ -45,4 +45,3 @@ Updates for 1.0 core libraries.
 ## [v0.1.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v0.1.0) - 2016-02-08
 
 - Initial release
-
