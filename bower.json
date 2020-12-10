@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript-contrib/purescript-http-methods.git"
+    "url": "https://github.com/purescript-contrib/purescript-http-methods.git"
   },
   "ignore": [
     "**/.*",
@@ -17,8 +17,8 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-either": "^4.0.0",
-    "purescript-prelude": "^4.0.0",
-    "purescript-strings": "^4.0.0"
+    "purescript-either": "master",
+    "purescript-prelude": "master",
+    "purescript-strings": "master"
   }
 }
