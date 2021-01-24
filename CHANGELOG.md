@@ -5,12 +5,16 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes (😱!!!):
+- Added support for PureScript 0.14 and dropped support for all previous versions (#11)
 
 New features:
+- Added `parse` function (#11)
 
 Bugfixes:
 
 Other improvements:
+- Changed default branch to `main` from `master`
+- Updated to comply with Contributors library guidelines by adding new issue and pull request templates, updating documentation, and migrating to Spago for local development and CI (#9, #10)
 
 ## [v4.0.2](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v4.0.2) - 2018-07-31
 
@@ -18,12 +22,11 @@ Other improvements:
 
 ## [v4.0.1](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v4.0.1) - 2018-06-23
 
-- Adds metadata including contributor guidelines
-- Pushes latest release to Pursuit
+- Added metadata including contributor guidelines and pushed latest release to Pursuit
 
 ## [v4.0.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v4.0.0) - 2018-05-25
 
-Updates for 0.12
+- Updated for PureScript 0.12
 
 ## [v3.0.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v3.0.0) - 2017-04-03
 
@@ -35,12 +38,12 @@ Updates for 0.12
 
 ## [v1.0.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v1.0.0) - 2016-06-06
 
-Updates for 1.0 core libraries.
+- Updated for 1.0 core libraries.
 
 ## [v0.1.1](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v0.1.1) - 2016-02-09
 
-- `runCustomMethod` is now exported
-- Better behaved `Show` value
+- Exported `runCustomMethod`
+- Implemented a better-behaved `Show` instance
 
 ## [v0.1.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v0.1.0) - 2016-02-08
 
