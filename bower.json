@@ -17,12 +17,12 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-either": "master",
-    "purescript-prelude": "master",
-    "purescript-strings": "master"
+    "purescript-either": "^6.0.0",
+    "purescript-prelude": "^6.0.0",
+    "purescript-strings": "^6.0.0"
   },
   "devDependencies": {
-    "purescript-console": "master",
-    "purescript-effect": "master"
+    "purescript-console": "^6.0.0",
+    "purescript-effect": "^4.0.0"
   }
 }
