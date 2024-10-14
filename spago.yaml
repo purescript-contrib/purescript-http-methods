@@ -1,0 +1,19 @@
+package:
+  name: http-methods
+  description: HTTP method type
+  publish:
+    license: MIT
+    version: 7.0.0
+    location:
+      githubOwner: purescript-contrib
+      githubRepo: purescript-http-methods
+  dependencies:
+    - either: ">=6.1.0 <7.0.0"
+    - prelude: ">=6.0.1 <7.0.0"
+    - strings: ">=6.0.1 <7.0.0"
+  test:
+    main: Test.Main
+    dependencies:
+      - console
+      - effect
+workspace: {}
