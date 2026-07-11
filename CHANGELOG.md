@@ -12,6 +12,17 @@ Bugfixes:
 
 Other improvements:
 
+## [v6.1.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v6.1.0) - 2026-07-11
+
+Breaking changes:
+
+New features:
+- Added the `QUERY` method standardized by RFC 9842 (#19 by @an-archi-shell)
+
+Bugfixes:
+
+Other improvements:
+
 ## [v6.0.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v6.0.0) - 2022-04-27
 
 Breaking changes:
