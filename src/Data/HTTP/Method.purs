@@ -12,8 +12,9 @@ import Data.Either (Either(..), either)
 import Data.String as Str
 
 -- | The definition of the type is based on HTTP/1.1 with
--- | [RFC 2518](https://tools.ietf.org/html/rfc2518) and
--- | [RFC 5789](https://tools.ietf.org/html/rfc5789).
+-- | [RFC 2518](https://tools.ietf.org/html/rfc2518),
+-- | [RFC 5789](https://tools.ietf.org/html/rfc5789), and
+-- | [RFC 9842](https://www.rfc-editor.org/rfc/rfc9842).
 data Method
   -- HTTP/1.1
   = OPTIONS
@@ -37,6 +38,9 @@ data Method
   -- RFC5789
   | PATCH
 
+  -- RFC 9842
+  | QUERY
+
 derive instance eqMethod :: Eq Method
 derive instance ordMethod :: Ord Method
 
@@ -57,6 +61,7 @@ instance showMethod :: Show Method where
   show LOCK = "LOCK"
   show UNLOCK = "UNLOCK"
   show PATCH = "PATCH"
+  show QUERY = "QUERY"
 
 newtype CustomMethod = CustomMethod String
 
@@ -91,6 +96,7 @@ parse handleMethod handleUnknown s =
     "LOCK" -> handleMethod LOCK
     "UNLOCK" -> handleMethod UNLOCK
     "PATCH" -> handleMethod PATCH
+    "QUERY" -> handleMethod QUERY
     m -> handleUnknown m
 
 fromString :: String -> Either Method CustomMethod
