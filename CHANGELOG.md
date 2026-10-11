@@ -11,6 +11,7 @@ New features:
 Bugfixes:
 
 Other improvements:
+- Complete the migration to registry-backed Spago, preserving the published dependency bounds and updating CI tooling.
 
 ## [v6.1.0](https://github.com/purescript-contrib/purescript-http-methods/releases/tag/v6.1.0) - 2026-07-11
 
